@@ -1,0 +1,41 @@
+﻿[
+	{
+		"TT": "1",
+		"codeMapGroup": "DBR_2019",
+		"nameMapGroup": "Diễn biến rừng",
+		"nameRegionCol": "DBR_2019",
+		"year": "2023",
+		"multiProvince": "0",
+		"provinceCode": "35",
+		"linkRoot": "https://bando.ifee.edu.vn:8453/geoserver/GSR_HaNam/wms?service=WMS",
+		"layers": "GSR_HaNam:hanam_dbr",
+		"version": "1.1.0",
+		"cql_filter": "",
+		"styles": "DBR_HaNam",
+		"src": "EPSG:900913",
+		"format": "image/png",
+		"nameProvinCodeCol": "matinh",
+		"nameDistrictCodeCol": "mahuyen",
+		"nameCommuneCodeCol": "maxa",
+		"request": "GetMap"
+	},
+	{
+		"TT": "2",
+		"codeMapGroup": "ChayIfee",
+		"nameMapGroup": "Bản đồ cấp cháy",
+		"nameRegionCol": "ChayIfee",
+		"year": "2023",
+		"multiProvince": "0",
+		"provinceCode": "35",
+		"linkRoot": "https://bando.ifee.edu.vn:8453/geoserver/GSR_HaNam/wms?service=WMS",
+		"layers": "GSR_HaNam:hanam_dbr",
+		"version": "1.1.0",
+		"cql_filter": "",
+		"styles": "capchay_hanam",
+		"src": "EPSG:900913",
+		"format": "image/png",
+		"nameProvinCodeCol": "matinh",
+		"nameDistrictCodeCol": "mahuyen",
+		"nameCommuneCodeCol": "maxa"
+	}
+]

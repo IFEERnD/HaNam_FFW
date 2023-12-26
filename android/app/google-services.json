@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "162360324089",
+    "project_id": "hanamffw",
+    "storage_bucket": "hanamffw.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:162360324089:android:e2ed3d493bc18261431728",
+        "android_client_info": {
+          "package_name": "com.hanamffw"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyCj_HL5OlzIuH-ye2_zHuXEbtN8oj17Kgc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
