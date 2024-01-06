@@ -268,6 +268,8 @@ export default class comfirmFirePoint extends Component {
             username: "",
             userphone: "",
           });
+          navigation.state.params.onRefesh();
+          navigation.goBack();
           Toast.show({
             text: "Xác minh thành công",
             type: "success",
@@ -278,8 +280,6 @@ export default class comfirmFirePoint extends Component {
             },
             duration: 2000,
           });
-          navigation.state.params.onRefesh();
-          navigation.goBack();
         } else {
           Toast.show({
             text: "Gửi xác minh thất bại",

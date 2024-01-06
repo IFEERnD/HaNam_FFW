@@ -40,7 +40,9 @@
 		E21246AB182387798F2BAD46 /* libPods-HaNamFFW-tvOSTests.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 60E93D12F0C2B5B0F093B95A /* libPods-HaNamFFW-tvOSTests.a */; };
 		F38011805CD84746B4EF4F67 /* FontAwesome5_Solid.ttf in Resources */ = {isa = PBXBuildFile; fileRef = F7597A98E044450DAB461188 /* FontAwesome5_Solid.ttf */; };
 		F597A74580284C4CB09044A2 /* Roboto.ttf in Resources */ = {isa = PBXBuildFile; fileRef = C3C388CF88AD41E4B480761C /* Roboto.ttf */; };
-		F7814F162B343727009EEBBF /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7814F152B343727009EEBBF /* GoogleService-Info.plist */; };
+		F721FE142B3D0859001B3F59 /* main.jsbundle in Resources */ = {isa = PBXBuildFile; fileRef = 008F07F21AC5B25A0029DE68 /* main.jsbundle */; };
+		F7B392CF2B3C1B1100D156FE /* AppTrackingTransparency.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = F7B392CE2B3C1B1100D156FE /* AppTrackingTransparency.framework */; };
+		F7BA11212B3A83C2009A1520 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = F7BA11202B3A83C2009A1520 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -110,7 +112,8 @@
 		ED297162215061F000B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = System/Library/Frameworks/JavaScriptCore.framework; sourceTree = SDKROOT; };
 		ED2971642150620600B7C4FE /* JavaScriptCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = JavaScriptCore.framework; path = Platforms/AppleTVOS.platform/Developer/SDKs/AppleTVOS12.0.sdk/System/Library/Frameworks/JavaScriptCore.framework; sourceTree = DEVELOPER_DIR; };
 		F7597A98E044450DAB461188 /* FontAwesome5_Solid.ttf */ = {isa = PBXFileReference; explicitFileType = undefined; fileEncoding = 9; includeInIndex = 0; lastKnownFileType = unknown; name = FontAwesome5_Solid.ttf; path = "../node_modules/native-base/Fonts/FontAwesome5_Solid.ttf"; sourceTree = "<group>"; };
-		F7814F152B343727009EEBBF /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../GoogleService-Info.plist"; sourceTree = "<group>"; };
+		F7B392CE2B3C1B1100D156FE /* AppTrackingTransparency.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AppTrackingTransparency.framework; path = System/Library/Frameworks/AppTrackingTransparency.framework; sourceTree = SDKROOT; };
+		F7BA11202B3A83C2009A1520 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; name = "GoogleService-Info.plist"; path = "../../../../../Downloads/GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -126,6 +129,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F7B392CF2B3C1B1100D156FE /* AppTrackingTransparency.framework in Frameworks */,
 				45FCF33525F393790069193B /* libreact-native-image-picker.a in Frameworks */,
 				31417519A9656431E89A782C /* libPods-HaNamFFW.a in Frameworks */,
 			);
@@ -170,7 +174,7 @@
 		13B07FAE1A68108700A75B9A /* HaNamFFW */ = {
 			isa = PBXGroup;
 			children = (
-				F7814F152B343727009EEBBF /* GoogleService-Info.plist */,
+				F7BA11202B3A83C2009A1520 /* GoogleService-Info.plist */,
 				45A789922605DE0600C2204A /* HaNamFFW.entitlements */,
 				008F07F21AC5B25A0029DE68 /* main.jsbundle */,
 				13B07FAF1A68108700A75B9A /* AppDelegate.h */,
@@ -186,6 +190,7 @@
 		2D16E6871FA4F8E400B85C8A /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				F7B392CE2B3C1B1100D156FE /* AppTrackingTransparency.framework */,
 				45FCF33425F393790069193B /* libreact-native-image-picker.a */,
 				ED297162215061F000B7C4FE /* JavaScriptCore.framework */,
 				458BFC0525F38FBC00A1C13C /* libreact-native-image-picker.a */,
@@ -420,6 +425,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				F721FE142B3D0859001B3F59 /* main.jsbundle in Resources */,
 				81AB9BB82411601600AC10FF /* LaunchScreen.storyboard in Resources */,
 				13B07FBF1A68108700A75B9A /* Images.xcassets in Resources */,
 				C8D7CDBDDF3A4B2789C4029D /* AntDesign.ttf in Resources */,
@@ -439,7 +445,7 @@
 				055FE71C4289454393A61DA4 /* Roboto_medium.ttf in Resources */,
 				F597A74580284C4CB09044A2 /* Roboto.ttf in Resources */,
 				7AE1B7560F654498A8E51135 /* rubicon-icon-font.ttf in Resources */,
-				F7814F162B343727009EEBBF /* GoogleService-Info.plist in Resources */,
+				F7BA11212B3A83C2009A1520 /* GoogleService-Info.plist in Resources */,
 				6046AE2F25C34A82BBCC9F2E /* SimpleLineIcons.ttf in Resources */,
 				7B62A503E84C4D1F96AB12C9 /* Zocial.ttf in Resources */,
 			);
@@ -831,7 +837,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HaNamFFW/HaNamFFW.entitlements;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 7L7FA98CYL;
 				ENABLE_BITCODE = NO;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
@@ -840,7 +846,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Hà Nam FFW";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",
@@ -861,7 +867,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = HaNamFFW/HaNamFFW.entitlements;
-				CURRENT_PROJECT_VERSION = 2;
+				CURRENT_PROJECT_VERSION = 12;
 				DEVELOPMENT_TEAM = 7L7FA98CYL;
 				"EXCLUDED_ARCHS[sdk=iphonesimulator*]" = arm64;
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -869,7 +875,7 @@
 				INFOPLIST_KEY_CFBundleDisplayName = "Hà Nam FFW";
 				INFOPLIST_KEY_LSApplicationCategoryType = "public.app-category.developer-tools";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				MARKETING_VERSION = 1.1;
+				MARKETING_VERSION = 1.7;
 				OTHER_LDFLAGS = (
 					"$(inherited)",
 					"-ObjC",

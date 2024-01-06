@@ -9,6 +9,7 @@ import {
   Alert,
   Slider,
   PixelRatio,
+  Platform,
 } from "react-native";
 import {
   Header,
@@ -44,6 +45,11 @@ import {
 } from "react-native-popup-menu";
 import { ActionSheetCustom as ActionSheet } from "react-native-actionsheet";
 import { defaultCoordinatesProvince } from "../untils/Variable";
+import {
+  request,
+  PERMISSIONS,
+  requestMultiple,
+} from "react-native-permissions";
 
 const { width, height } = Dimensions.get("window");
 const ASPECT_RATIO = width / height;
@@ -109,8 +115,63 @@ const listDisplayLabelFireMapExplant = [
   "Lượng mưa",
 ];
 
+const fullLabel = {
+  tt: "Thứ tự",
+  id: "ID",
+  matinh: "Mã tỉnh",
+  mahuyen: "Mã huyện",
+  maxa: "Mã xã",
+  xa: "Xã",
+  tk: "Tiểu khu",
+  khoanh: "khoảnh",
+  lo: "lô",
+  thuad: "Thửa đất",
+  tobando: "Tờ bản đồ",
+  ddanh: "Địa danh",
+  dtich: "Diện tích",
+  dientichch: "dientichch",
+  nggocr: "Nguồn gốc rừng",
+  ldlr: "Loại đất loại rừng",
+  maldlr: "Mã loại đất loại rừng",
+  sldlr: "Loài cây trồng",
+  namtr: "Năm trồng",
+  captuoi: "Cấp tuổi",
+  ktan: "Khép tán",
+  nggocrt: "Nguồn gốc rừng trồng",
+  thanhrung: "Tình trạng thành rừng",
+  mgo: "Trữ lượng/ha",
+  mtn: "Mật độ tre nứa/ha",
+  mgolo: "Trữ lượng/lô",
+  mtnlo: "Mật độ tre nứa",
+  malr3: "Mã loại rừng 3",
+  mdsd: "Mục đích sử dụng",
+  mamdsd: "Mã mục đích sử dụng",
+  dtuong: "Đối tượng",
+  churung: "Chủ rừng",
+  machur: "Mã chủ rừng",
+  trchap: "Tranh chấp",
+  quyensd: "Quyền sử dụng",
+  thoihansd: "Thời hạn sử dụng",
+  khoan: "Tình trạng khoán",
+  nqh: "Ngoài quy hoạch",
+  nguoink: "Người nhận khoán",
+  nguoitrch: "Người tranh chấp",
+  mangnk: "Mã người nhận khoán",
+  mangtrch: "Mã người tranh chấp",
+  ngsinh: "Tình trạng nguyên sinh",
+  kd: "Kinh độ",
+  vd: "Vĩ độ",
+  capkd: "Cấp kinh độ",
+  capvd: "Cấp vĩ độ",
+  locu: "Lô cũ",
+  vitrithua: "Vị trí thửa",
+  tinh: "Tỉnh",
+  huyen: "Huyện",
+  capchay: "Cấp cháy",
+  lapdia: "Lập địa",
+};
+
 let id = 0;
-let url = null;
 
 const Contact = ["Huỷ", "Gọi điện", "Gửi SMS", "Gửi Email"];
 
@@ -149,32 +210,19 @@ export default class MapScreen extends Component {
   }
 
   componentWillMount() {
-    RNLocation.configure({
-      distanceFilter: 0.2,
-      maxWaitTime: 3,
-      fastestInterval: 1,
-      interval: 1,
-      distanceFilter: 0,
-      desiredAccuracy: {
-        android: "highAccuracy",
-      },
-    });
-    RNLocation.requestPermission({
-      ios: "whenInUse",
-      android: {
-        detail: "fine",
-        rationale: {
-          title: "Location permission",
-          message: "We use your location to demo the library",
-          buttonPositive: "OK",
-          buttonNegative: "Cancel",
-        },
-      },
-    }).then((granted) => {
-      if (granted) {
+    if (Platform.OS === "android") {
+      requestMultiple([
+        PERMISSIONS.ANDROID.ACCESS_COARSE_LOCATION,
+        PERMISSIONS.ANDROID.ACCESS_FINE_LOCATION,
+      ]).then((result) => {
         this._startUpdatingLocation();
-      }
-    });
+      });
+    } else {
+      request(PERMISSIONS.IOS.LOCATION_ALWAYS).then((result) => {
+        this._startUpdatingLocation();
+      });
+    }
+    this._startUpdatingLocation();
   }
 
   _showOptions() {
@@ -282,6 +330,7 @@ export default class MapScreen extends Component {
       const ApiCall = await fetch(linkAPIGetInfoFull);
       const regionFeatureInfo = await ApiCall.json();
       let disPlayData = "";
+      let disPlayDataFull = "";
       if (this.state.selectTypeMapCode == "ChayIfee") {
         for (let [key, value] of Object.entries(
           regionFeatureInfo.features[0].properties
@@ -312,11 +361,12 @@ export default class MapScreen extends Component {
         }
       }
 
-      let disPlayDataFull = "";
       for (let [key, value] of Object.entries(
         regionFeatureInfo.features[0].properties
       )) {
-        disPlayDataFull = disPlayDataFull + key + ": " + value + "\n";
+        console.log(key);
+        disPlayDataFull =
+          disPlayDataFull + fullLabel[key] + ": " + value + "\n";
       }
       console.log("Thong tin sau chuyen doi: ", disPlayData);
       this.setState(
